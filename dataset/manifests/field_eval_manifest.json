@@ -1,0 +1,200 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "manifest_id": "AGRIVISION-FIELD-EVAL-V1",
+  "name": "AgriVision AI Multi-Plant Field Evaluation Benchmark",
+  "version": "1.0.0",
+  "created_at": "2026-10-27T17:55:00Z",
+  "description": "Locked, reproducible multi-plant field evaluation benchmark for AgriVision AI. Contains unaugmented, independently sourced real-world field imagery and out-of-domain control specimens. strictly isolated from training data.",
+  "eval_summary": {
+    "total_verified_samples_on_disk": 5,
+    "verified_field_crops": [
+      "Tomato (Solanum lycopersicum)"
+    ],
+    "verified_control_categories": [
+      "Out-of-Domain Non-Foliar Synthetic Controls"
+    ],
+    "pending_crop_specimens": [
+      "Potato (Solanum tuberosum)",
+      "Bell Pepper / Chilli (Capsicum annuum)",
+      "Corn / Maize (Zea mays)",
+      "Rice / Paddy (Oryza sativa)",
+      "Apple (Malus domestica)",
+      "Grape (Vitis vinifera)"
+    ]
+  },
+  "verified_samples": [
+    {
+      "id": "EVAL-TOMATO-EB-01",
+      "file_path": "dataset/eval/tomato/tomato_early_blight_field_01.jpg",
+      "crop_species": "Tomato",
+      "botanical_name": "Solanum lycopersicum",
+      "pathology_status": "infected",
+      "ground_truth_disease": "Tomato Early Blight",
+      "causative_agent": "Alternaria solani",
+      "mapped_model_class": "Tomato with Early Blight",
+      "model_class_index": 29,
+      "acquisition_domain": "field",
+      "image_quality": "High-resolution outdoor macro photograph",
+      "resolution": "1200x896",
+      "file_size_bytes": 854779,
+      "sha256": "499013371c21d8b84bd9ace9306672dc6991f791cdb9f5b2e8b51e5b116c5cdc",
+      "duplicate_flag": false,
+      "license": "CC-BY-SA-4.0",
+      "source_reference": "AgriVision AI Verified In-Field Specimen Archive",
+      "notes": "Outdoor tomato foliage exhibiting classic concentric zonate necrotic lesions with distinct chlorotic halo and natural field soil background.",
+      "verification_status": "VERIFIED_ON_DISK"
+    },
+    {
+      "id": "EVAL-TOMATO-HL-01",
+      "file_path": "dataset/eval/tomato/tomato_healthy_field_01.jpg",
+      "crop_species": "Tomato",
+      "botanical_name": "Solanum lycopersicum",
+      "pathology_status": "healthy",
+      "ground_truth_disease": "Healthy Tomato Foliage",
+      "causative_agent": "None (Healthy)",
+      "mapped_model_class": "Healthy Tomato Plant",
+      "model_class_index": 37,
+      "acquisition_domain": "field",
+      "image_quality": "High-resolution outdoor macro photograph",
+      "resolution": "1200x896",
+      "file_size_bytes": 915113,
+      "sha256": "229a51132053ad25fad58b643f519bc54015c6a02120c7d0268b38c1e7e51175",
+      "duplicate_flag": false,
+      "license": "CC-BY-SA-4.0",
+      "source_reference": "AgriVision AI Verified In-Field Specimen Archive",
+      "notes": "Healthy outdoor tomato foliage with intact serrated margin, natural morning dew droplets, and non-uniform outdoor sunlight.",
+      "verification_status": "VERIFIED_ON_DISK"
+    },
+    {
+      "id": "EVAL-OOD-DARK-01",
+      "file_path": "dataset/eval/out_of_domain/dark_uniform_control.jpg",
+      "crop_species": "Non-Crop / Out of Domain",
+      "botanical_name": "N/A",
+      "pathology_status": "out_of_domain",
+      "ground_truth_disease": "Non-Botanical Uniform Surface",
+      "causative_agent": "N/A",
+      "mapped_model_class": null,
+      "model_class_index": null,
+      "acquisition_domain": "synthetic_control",
+      "image_quality": "Uniform Dark Matrix (RGB 35,35,35)",
+      "resolution": "224x224",
+      "file_size_bytes": 560,
+      "sha256": "b2ef79ced4ed20901d665a73b66481c205a9a8b95d82fa777f5144907431af58",
+      "duplicate_flag": false,
+      "license": "Public Domain / CC0",
+      "source_reference": "AgriVision AI System Validation Suite",
+      "notes": "Negative control input to verify out-of-domain filter triggers without fabricating a tomato diagnosis.",
+      "verification_status": "VERIFIED_ON_DISK"
+    },
+    {
+      "id": "EVAL-OOD-GREEN-01",
+      "file_path": "dataset/eval/out_of_domain/green_uniform_control.jpg",
+      "crop_species": "Non-Crop / Out of Domain",
+      "botanical_name": "N/A",
+      "pathology_status": "out_of_domain",
+      "ground_truth_disease": "Uniform Green Foliar Foil",
+      "causative_agent": "N/A",
+      "mapped_model_class": null,
+      "model_class_index": null,
+      "acquisition_domain": "synthetic_control",
+      "image_quality": "Uniform Green Surface (RGB 34,139,34)",
+      "resolution": "224x224",
+      "file_size_bytes": 562,
+      "sha256": "e42f68135b33c537dcf09445e24576142b1e0e5d2edb666f32d45ada5f6212b9",
+      "duplicate_flag": false,
+      "license": "Public Domain / CC0",
+      "source_reference": "AgriVision AI System Validation Suite",
+      "notes": "Tests model behavior against featureless chlorophyll-colored inputs.",
+      "verification_status": "VERIFIED_ON_DISK"
+    },
+    {
+      "id": "EVAL-OOD-WHITE-01",
+      "file_path": "dataset/eval/out_of_domain/white_uniform_control.jpg",
+      "crop_species": "Non-Crop / Out of Domain",
+      "botanical_name": "N/A",
+      "pathology_status": "out_of_domain",
+      "ground_truth_disease": "Uniform White Paper Surface",
+      "causative_agent": "N/A",
+      "mapped_model_class": null,
+      "model_class_index": null,
+      "acquisition_domain": "synthetic_control",
+      "image_quality": "Uniform White Matrix (RGB 255,255,255)",
+      "resolution": "224x224",
+      "file_size_bytes": 560,
+      "sha256": "215f6dbccef589d68cfcacbbb6de9c82ae7beec6dddebf4589e3e1b74e13f1be",
+      "duplicate_flag": false,
+      "license": "Public Domain / CC0",
+      "source_reference": "AgriVision AI System Validation Suite",
+      "notes": "Tests model response to high-albedo uniform backgrounds resembling lab cardboard.",
+      "verification_status": "VERIFIED_ON_DISK"
+    }
+  ],
+  "pending_sources_and_intake_destinations": [
+    {
+      "crop_group": "Tomato Extended Field Cohort",
+      "candidate_source": "Tomato Leaf Disease Classification Dataset in Pakistan",
+      "source_url": "https://data.mendeley.com/datasets/3mbnb82mxd/2",
+      "doi": "10.17632/3mbnb82mxd.2",
+      "declared_license": "CC BY 4.0",
+      "approval_status": "APPROVED_FOR_BENCHMARK",
+      "exact_intake_path": "dataset/raw/tomato_pakistan_2026/",
+      "target_eval_destination": "dataset/eval/tomato/",
+      "target_classes": [
+        "Early Blight",
+        "Late Blight",
+        "Leaf Mold",
+        "Septoria Leaf Spot",
+        "Yellow Leaf Curl Virus",
+        "Healthy"
+      ],
+      "access_method": "Requires direct manual/browser download from Mendeley Data CDN due to bot-challenge protection on raw archive endpoints.",
+      "verification_status": "PENDING_MANUAL_DOWNLOAD"
+    },
+    {
+      "crop_group": "Potato Field Pathologies",
+      "candidate_source": "PlantDoc (Potato subset) / Agricultural Extension Repositories",
+      "source_url": "https://github.com/pratikkayal/PlantDoc-Dataset",
+      "declared_license": "CC-BY-4.0 (repo level) with unresolved image copyrights",
+      "approval_status": "RESTRICTED_RESEARCH_BENCHMARK_ONLY",
+      "exact_intake_path": "dataset/raw/plantdoc/test/Potato leaf early blight/",
+      "target_eval_destination": "dataset/eval/potato/",
+      "target_classes": [
+        "Potato leaf early blight (Alternaria solani)",
+        "Potato leaf late blight (Phytophthora infestans)"
+      ],
+      "verification_status": "HELD_PENDING_COPYRIGHT_CLEARANCE"
+    },
+    {
+      "crop_group": "Corn / Maize Field Pathologies",
+      "candidate_source": "PlantDoc (Corn subset) / CGIAR Maize Open Survey",
+      "source_url": "https://github.com/pratikkayal/PlantDoc-Dataset",
+      "declared_license": "CC-BY-4.0 (repo level) with unresolved image copyrights",
+      "approval_status": "RESTRICTED_RESEARCH_BENCHMARK_ONLY",
+      "exact_intake_path": "dataset/raw/plantdoc/test/Corn rust leaf/",
+      "target_eval_destination": "dataset/eval/corn/",
+      "target_classes": [
+        "Corn Gray leaf spot",
+        "Corn leaf blight",
+        "Corn rust leaf"
+      ],
+      "verification_status": "HELD_PENDING_COPYRIGHT_CLEARANCE"
+    },
+    {
+      "crop_group": "Rice / Paddy Indian Pathologies",
+      "candidate_source": "Rice Leaf Disease Dataset for South Asian Agro-Climates",
+      "source_url": "https://data.mendeley.com/datasets/fwcj7stb8r/1",
+      "doi": "10.17632/fwcj7stb8r.1",
+      "declared_license": "CC BY 4.0",
+      "approval_status": "APPROVED_FOR_INDIAN_ROADMAP",
+      "exact_intake_path": "dataset/raw/rice_mendeley_2020/",
+      "target_eval_destination": "dataset/eval/rice/",
+      "target_classes": [
+        "Bacterial Leaf Blight",
+        "Rice Blast",
+        "Brown Spot"
+      ],
+      "access_method": "Direct download via Mendeley Data",
+      "verification_status": "PENDING_DOWNLOAD"
+    }
+  ]
+}

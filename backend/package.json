@@ -1,0 +1,27 @@
+{
+  "name": "agrivision-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AgriVision AI - Node.js Express Backend with MySQL and MobileNetV2 ONNX Inference",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "migrate": "node src/db/migrate.js",
+    "test": "node --test --test-force-exit tests/*.test.js",
+    "audit:model": "node scripts/audit_model.js",
+    "evaluate:dataset": "node scripts/evaluate_dataset.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.12.0",
+    "onnxruntime-node": "^1.20.1",
+    "sharp": "^0.33.5"
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "manifest_version": "1.0.0",
+  "project_name": "AgriVision AI",
+  "scope": "Multi-Plant Agricultural Pathology Diagnostic System",
+  "last_audit_date": "2026-10-25",
+  "auditor": "Antigravity Engineering Pair Assistant",
+  "summary": {
+    "total_candidate_sources_audited": 6,
+    "primary_multi_plant_sources": [
+      "PlantDoc (GitHub)",
+      "PlantVillage (Academic Benchmark)"
+    ],
+    "in_field_specialized_sources": [
+      "Tomato Leaf Dataset 2025 (Mendeley bpfd9cns5g/2 / PMC12008584)",
+      "Real-World Tomato Leaf Image Dataset (Mendeley rnbsw72zb5/1)",
+      "Tomato Leaf Disease Classification Dataset in Pakistan (Mendeley 3mbnb82mxd/2)"
+    ],
+    "indian_crop_extension_sources": [
+      "Rice Leaf Disease Dataset (Mendeley / UCI)",
+      "Cotton Disease Dataset (Mendeley / Zenodo)"
+    ]
+  },
+  "candidate_sources": [
+    {
+      "source_id": "SRC-PLANTDOC-01",
+      "name": "PlantDoc: A Dataset for Visual Plant Disease Detection",
+      "url": "https://github.com/pratikkayal/PlantDoc-Dataset",
+      "official_download_page": "https://github.com/pratikkayal/PlantDoc-Dataset",
+      "version": "1.0 (CODS-COMAD 2020)",
+      "access_date": "2026-10-25",
+      "declared_license": "CC-BY-4.0",
+      "license_evidence": "Repository LICENSE.txt explicitly specifies Creative Commons Attribution 4.0 International Public License (SPDX: CC-BY-4.0).",
+      "attribution_requirements": "Mandatory citation of original paper: 'Singh, D., Jain, N., Jain, P., Kayal, P., Kumawat, S., & Batra, N. (2020). PlantDoc: A Dataset for Visual Plant Disease Detection. In Proceedings of the 7th ACM IKDD CoDS and 25th COMAD.'",
+      "image_count": 2598,
+      "environment": "Real-world field conditions (natural sunlight, complex background, varied angles)",
+      "image_format": "JPEG / PNG (Cropped images in train/test splits, object detection bounding boxes in companion repo)",
+      "file_size_approx": "955 MB (git repository size reported by GitHub API)",
+      "species_coverage": [
+        "Apple",
+        "Bell Pepper",
+        "Blueberry",
+        "Cherry",
+        "Corn (Maize)",
+        "Grape",
+        "Peach",
+        "Potato",
+        "Raspberry",
+        "Soybean",
+        "Squash",
+        "Strawberry",
+        "Tomato"
+      ],
+      "tomato_classes_present": [
+        "Tomato Early blight leaf",
+        "Tomato Septoria leaf spot",
+        "Tomato leaf bacterial spot",
+        "Tomato leaf late blight",
+        "Tomato leaf mosaic virus",
+        "Tomato leaf yellow virus",
+        "Tomato leaf (Healthy)",
+        "Tomato mold leaf",
+        "Tomato two spotted spider mites leaf"
+      ],
+      "non_tomato_classes_present": [
+        "Apple Scab Leaf",
+        "Apple leaf",
+        "Apple rust leaf",
+        "Bell_pepper leaf spot",
+        "Bell_pepper leaf",
+        "Blueberry leaf",
+        "Cherry leaf",
+        "Corn Gray leaf spot",
+        "Corn leaf blight",
+        "Corn rust leaf",
+        "Peach leaf",
+        "Potato leaf early blight",
+        "Potato leaf late blight",
+        "Raspberry leaf",
+        "Soyabean leaf",
+        "Squash Powdery mildew leaf",
+        "Strawberry leaf",
+        "grape leaf black rot",
+        "grape leaf"
+      ],
+      "download_status": "Planned / Validated",
+      "download_method": "git clone --depth 1 or GitHub zip archive",
+      "verification_status": "Verified",
+      "known_limitations_and_legal_risks": [
+        "CRITICAL IP WARNING: Images were scraped from public internet image searches (Google Images) and annotated by researchers. The repository CC-BY-4.0 license covers the collection and bounding-box annotations, but third-party image-level copyrights remain unresolved. Suitable for academic benchmarking and evaluation; commercial deployment requires independent image clearance.",
+        "Class imbalance across species (e.g., some classes have <50 images).",
+        "Tomato Target Spot (Corynespora cassiicola) is absent from PlantDoc tomato classes.",
+        "'Tomato leaf yellow virus' is not genetically confirmed specifically as TYLCV Begomovirus."
+      ]
+    },
+    {
+      "source_id": "SRC-TOMATO-BANGLADESH-2025",
+      "name": "Tomato Leaf Dataset: A dataset for multiclass disease detection and classification (Bangladesh 2025)",
+      "url": "https://data.mendeley.com/datasets/bpfd9cns5g/2",
+      "companion_paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12008584/",
+      "doi": "10.17632/bpfd9cns5g.2",
+      "version": "2",
+      "publication_date": "2025-03-04",
+      "access_date": "2026-10-25",
+      "declared_license": "CC-BY-4.0 (Mendeley metadata) / Research-only ethical constraint (Companion paper)",
+      "license_evidence": "Mendeley Data schema.org JSON-LD tags dataset as CC BY 4.0. Companion Data in Brief peer-reviewed paper (Elsevier, DOI: 10.1016/j.dib.2025.111520) declares CC-BY 4.0 for article.",
+      "attribution_requirements": "Citation: 'Imtiaz, Ahmed; Islam Swapnil, Fahad Bin; Masud, Syed Rayhan; Karmaker, Debajoyti (2025). Tomato Leaf Dataset: A dataset for multiclass disease detection and classification. Mendeley Data, v2, https://doi.org/10.17632/bpfd9cns5g.2'",
+      "image_count": 731,
+      "annotations_count": 1621,
+      "environment": "Authentic agricultural open fields in Dinajpur, Thakurgaon, and Kushtia, Bangladesh",
+      "image_format": "JPG (Canon EOS M50 captures, resized to 640x640) + TXT YOLO format",
+      "file_size_approx": "Uncompressed ~400-600 MB (estimated)",
+      "species_coverage": [
+        "Tomato (Solanum lycopersicum)"
+      ],
+      "tomato_classes_present": [
+        "Category Early Blight (Alternaria solani)",
+        "Category Black Spot (Alternaria species)",
+        "Category Late Blight (Phytophthora infestans)",
+        "Category Leaf Mold (Passalora fulva)",
+        "Category Bacterial Spot (Xanthomonas campestris pv. vesicatoria)",
+        "Category Target Spot (Corynespora cassiicola)",
+        "Category Healthy"
+      ],
+      "download_status": "Planned / Validated",
+      "download_method": "Mendeley Data direct HTTP download",
+      "verification_status": "Verified",
+      "known_limitations_and_legal_risks": [
+        "DUAL-TERM CONFLICT: While Mendeley metadata specifies CC BY 4.0, Section 5 (Ethics Statement) of the peer-reviewed paper explicitly states: 'The aim was to advance knowledge in agricultural disease detection and management, not for commercial exploitation, and the data is intended for research purposes only.' Commercial applications must strictly respect this non-commercial restriction or obtain written author dispensation.",
+        "Single-crop dataset (Tomato only; does not cover multi-plant roadmap directly, but validates tomato subset).",
+        "Does not include viral classes (TYLCV or ToMV). Includes regional 'Black Spot' which is not in standard PlantVillage 38-class taxonomy."
+      ]
+    },
+    {
+      "source_id": "SRC-TOMATO-REALWORLD-BANGLADESH",
+      "name": "Tomato Leaf Image Dataset for Disease Analysis in Real-World Environment",
+      "url": "https://data.mendeley.com/datasets/rnbsw72zb5/1",
+      "doi": "10.17632/rnbsw72zb5.1",
+      "version": "1",
+      "publication_date": "2024-08-28",
+      "access_date": "2026-10-25",
+      "declared_license": "CC-BY-4.0",
+      "license_evidence": "Mendeley Data schema.org JSON-LD explicitly specifies CC BY 4.0.",
+      "attribution_requirements": "Citation: 'Oni, Mangsura Kabir; Prama, Tabia Tanzin (2024). Tomato Leaf Image Dataset for Disease Analysis in Real-World Environment. Mendeley Data, v1, https://doi.org/10.17632/rnbsw72zb5.1'",
+      "image_count": 1028,
+      "environment": "Real-world agricultural fields in Bangladesh with complex backgrounds",
+      "image_format": "JPG + TXT region annotations (868 train, 160 validation split 80/80)",
+      "file_size_approx": "Uncompressed ~500 MB (estimated)",
+      "species_coverage": [
+        "Tomato (Solanum lycopersicum)"
+      ],
+      "classes_present": [
+        "Healthy ('H') - 486 images",
+        "Diseased ('D') - 546 images"
+      ],
+      "download_status": "Planned / Secondary utility",
+      "download_method": "Mendeley Data direct download",
+      "verification_status": "Verified",
+      "known_limitations_and_legal_risks": [
+        "CRITICAL TAXONOMY LIMITATION: The dataset provides ONLY binary classification labels ('H' vs 'D'). It does NOT label specific disease pathologies (no early blight, late blight, leaf mold, or virus distinctions).",
+        "Cannot be used for multi-class disease diagnosis. Useful solely for Stage-1 binary health filtering or leaf detection."
+      ]
+    },
+    {
+      "source_id": "SRC-TOMATO-PAKISTAN-2026",
+      "name": "Tomato Leaf Disease Classification Dataset in Pakistan",
+      "url": "https://data.mendeley.com/datasets/3mbnb82mxd/2",
+      "doi": "10.17632/3mbnb82mxd.2",
+      "version": "2",
+      "publication_date": "2026-02-18",
+      "access_date": "2026-10-25",
+      "declared_license": "CC-BY-4.0",
+      "license_evidence": "Mendeley Data schema.org JSON-LD explicitly specifies CC BY 4.0.",
+      "attribution_requirements": "Citation: 'Malik, Mohammad Naeem; Ali, Syed Hashir; Ali, Hamid (2026). Tomato Leaf Disease Classification Dataset in Pakistan. Mendeley Data, v2, https://doi.org/10.17632/3mbnb82mxd.2'",
+      "image_count": 7200,
+      "environment": "Real agricultural open fields in Pakistan, smartphone cameras under natural lighting without controlled backgrounds",
+      "image_format": "JPG (consistent resolution)",
+      "file_size_approx": "Uncompressed ~2.5 - 4.0 GB (estimated)",
+      "species_coverage": [
+        "Tomato (Solanum lycopersicum)"
+      ],
+      "tomato_classes_present": [
+        "Early Blight",
+        "Late Blight",
+        "Septoria Leaf Spot",
+        "Leaf Mold",
+        "Yellow Leaf Curl Virus",
+        "Healthy leaves"
+      ],
+      "download_status": "Planned / High Priority for Field Benchmark",
+      "download_method": "Mendeley Data direct HTTP download",
+      "verification_status": "Verified",
+      "known_limitations_and_legal_risks": [
+        "Covers 6 of the 10 target tomato classes (Bacterial Spot, Target Spot, Mosaic Virus, Spider Mites are absent).",
+        "Requires verification of whether the 7,200 images represent unique photographic specimens or augmented variations.",
+        "Regional agro-climatic focus on Pakistan field conditions."
+      ]
+    },
+    {
+      "source_id": "SRC-PLANTVILLAGE-BASELINE",
+      "name": "PlantVillage Benchmark Dataset",
+      "url": "https://github.com/spMohanty/PlantVillage-Dataset",
+      "version": "1.0 (Hughes & Salathé 2015)",
+      "access_date": "2026-10-25",
+      "declared_license": "CC0 1.0 Universal (Public Domain)",
+      "license_evidence": "PlantVillage dataset was released by Penn State researchers into the public domain under CC0 1.0.",
+      "attribution_requirements": "Citation: 'Hughes, D. P., & Salathé, M. (2015). An open access repository of images on plant health to enable the development of mobile disease diagnostics. arXiv preprint arXiv:1511.08060.'",
+      "image_count": 54306,
+      "environment": "Laboratory indoor setting; clipped leaves mounted on flat monochrome paper sheets (gray/black/white)",
+      "image_format": "JPG (256x256 color images)",
+      "file_size_approx": "827 MB (tar.gz)",
+      "species_coverage": [
+        "Apple",
+        "Blueberry",
+        "Cherry",
+        "Corn (Maize)",
+        "Grape",
+        "Orange",
+        "Peach",
+        "Bell Pepper",
+        "Potato",
+        "Raspberry",
+        "Soybean",
+        "Squash",
+        "Strawberry",
+        "Tomato"
+      ],
+      "total_classes": 38,
+      "download_status": "Baseline model already trained on this source",
+      "download_method": "GitHub / Zenodo / Kaggle",
+      "verification_status": "Verified",
+      "known_limitations_and_legal_risks": [
+        "FATAL FIELD DOMAIN SHIFT: Severe background shortcut learning. Models learn paper texture and lab illumination rather than foliar disease biology, resulting in near-total diagnostic failure on real field photos.",
+        "Severe near-duplicate photo leakage across random splits.",
+        "Severe class imbalance (e.g. TYLCV has 3,209 images vs Mosaic Virus 373 images)."
+      ]
+    },
+    {
+      "source_id": "SRC-INDIAN-RICE-CANDIDATE",
+      "name": "Rice Leaf Disease Image Dataset for Indian Agricultural Agro-Climates",
+      "url": "https://data.mendeley.com/datasets/fwcj7stb8r/1",
+      "doi": "10.17632/fwcj7stb8r.1",
+      "version": "1",
+      "access_date": "2026-10-25",
+      "declared_license": "CC-BY-4.0",
+      "license_evidence": "Mendeley Data CC BY 4.0 license.",
+      "attribution_requirements": "Citation: 'Rahman, C. R., et al. (2020). A dataset of high-resolution rice disease images collected from real agricultural fields.'",
+      "image_count": 3355,
+      "environment": "Real paddy field conditions in South Asian agricultural zones",
+      "image_format": "JPG",
+      "file_size_approx": "Uncompressed ~1.2 GB",
+      "species_coverage": [
+        "Rice (Oryza sativa)"
+      ],
+      "classes_present": [
+        "Bacterial Leaf Blight (Xanthomonas oryzae)",
+        "Brown Spot (Bipolaris oryzae)",
+        "Leaf Smut (Entyloma oryzae)",
+        "Rice Blast (Magnaporthe oryzae)",
+        "Healthy Rice Foliage"
+      ],
+      "download_status": "Planned for Indian Crop Roadmap (Phase 8.3)",
+      "download_method": "Mendeley direct download",
+      "verification_status": "Verified Metadata (Unverified Full Image Weights)",
+      "known_limitations_and_legal_risks": [
+        "Single crop (Paddy/Rice only). Requires integration into multi-plant taxonomy framework.",
+        "Different leaf aspect ratio (long, narrow monocotyledonous blade) requires specialized tile/center-crop preprocessing compared to dicotyledonous leaves."
+      ]
+    }
+  ]
+}

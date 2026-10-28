@@ -1,0 +1,24 @@
+{
+  "dataset_version": "1.0.0",
+  "description": "Held-out baseline evaluation manifest for AgriVision AI",
+  "samples": [
+    {
+      "id": "SAMPLE-FIELD-01",
+      "file_path": "../frontend/public/images/tomato_early_blight.jpg",
+      "species": "Tomato (Solanum lycopersicum)",
+      "ground_truth_label": "Tomato with Early Blight",
+      "ground_truth_key": "tomato_early_blight",
+      "domain": "field",
+      "notes": "In-field macro photography showing concentric ring target lesions and chlorotic halos"
+    },
+    {
+      "id": "SAMPLE-FIELD-02",
+      "file_path": "../frontend/public/images/tomato_healthy.jpg",
+      "species": "Tomato (Solanum lycopersicum)",
+      "ground_truth_label": "Healthy Tomato Plant",
+      "ground_truth_key": "tomato_healthy",
+      "domain": "field",
+      "notes": "In-field macro photography showing healthy tomato leaf margin with dew droplets"
+    }
+  ]
+}
